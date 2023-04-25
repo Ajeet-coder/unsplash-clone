@@ -17,7 +17,7 @@ function Header() {
   const fetchimages = () => {
     console.log("Step 1" + searchValue)
     dispatch(fetchImages(searchValue))
-   // navigate("/imglist")
+    navigate("/imglist")
 
   }
 
