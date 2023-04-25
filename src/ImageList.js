@@ -6,14 +6,16 @@ import { Link, useNavigate } from 'react-router-dom';
 import { fetchImages } from './redux/slices/imagesSlice';
 
 
+
 function ImageList() {
 
-  const [isFevAdded ,setIsFevAdded]=useState(false)
+  const [isFevAdded, setIsFevAdded] = useState(false)
 
   const images = useSelector(state => state.image);
   console.log("under imageList  " + JSON.stringify(images, null, 2))
   const dispatch = useDispatch();
-  const navigate=useNavigate();
+  const navigate = useNavigate();
+
 
   const addfevList = (id, url) => {
     setIsFevAdded(true)
@@ -29,14 +31,15 @@ function ImageList() {
 
   }
 
-  
+
 
 
   if (null != images.data) {
     return (
       <div className="App">
+        <div className='mydiv'>
 
-        <div className='Gallery'>
+        <div className='gallery'>
 
 
 
@@ -49,13 +52,17 @@ function ImageList() {
                   {/* <button type='button' className='favourite-btn btn btn-outline-info' onClick={() => addfevList(item.id, item.urls.regular)}>fev</button> */}
 
 
-                  <img className='image' onClick={() => addfevList(item.id, item.urls.regular)} key={item.id} src={item.urls.regular}/>
 
+       
+                    <img className='image'  onClick={() => addfevList(item.id, item.urls.regular)} key={item.id} src={item.urls.regular} />
+                    
+                 
 
                 </>
               )
             })
           }
+        </div>
         </div>
 
       </div>
