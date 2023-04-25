@@ -1,0 +1,15 @@
+.image_fav{
+    border: 2px solid #555;
+    
+}
+
+.image{
+    background-color: #e71919;
+    box-shadow: #e71919 5px;
+   
+}
+
+image:hover{
+        background-color: yellow;
+     
+}

@@ -4,33 +4,38 @@ import { fetchImages } from './redux/slices/imagesSlice';
 import './App.css';
 import { useDispatch, useSelector } from 'react-redux';
 import ImageList from './ImageList';
-import Empty from './Empty';
+
 import Header from './Header';
+import { BrowserRouter, Link, Route, Routes } from 'react-router-dom';
+
+import Favourite from './Favourite';
+
 
 function App() {
 
   // Access Key:- {pnFlN2kdK55U97KmTIPDIASuzKdXq2CHMu97Hcgbx6w}
   // Secret key:- {LodQzCtVCelVGM5fsHwltOHGsuGIV4VB8eGAhtdN2w0}
 
-  const [searchValue, setSearchValue]=useState("");
-  const images=useSelector(state => state.image.data);
+  const [searchValue, setSearchValue] = useState("");
+  const images = useSelector(state => state.image.data);
 
-  const dispatch=useDispatch();
+  const dispatch = useDispatch();
 
-  // const fetchimages=()=>{
-  //   console.log("Step 1"+searchValue)
-  //   dispatch(fetchImages(searchValue))
-  
-  // }
 
-  if (null!=images) {
-    //console.log("if .....")
-    return <ImageList  />;
-  } 
   return (
     <>
-    <Header/>
-    
+      <Header />
+
+      <Routes>
+        <Route path='/' element={<ImageList />} />
+        <Route path='/imglist' element={<ImageList />}></Route>
+        <Route path='/fav' element={<Favourite />} />
+      </Routes>
+
+
+
+
+
     </>
   );
 }

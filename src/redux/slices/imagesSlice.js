@@ -1,7 +1,7 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 export const fetchImages=createAsyncThunk('fetchImages',async (value)=>{
    // console.log("calling......")
-    const response=await fetch(`https://api.unsplash.com/search/photos/?client_id=pnFlN2kdK55U97KmTIPDIASuzKdXq2CHMu97Hcgbx6w&query=${value}&orientation=squarish`)
+    const response=await fetch(`https://api.unsplash.com/search/photos/?client_id=pnFlN2kdK55U97KmTIPDIASuzKdXq2CHMu97Hcgbx6w&per_page=50&query=${value}&orientation=squarish`)
     return response.json();
 })
 
