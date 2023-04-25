@@ -46,10 +46,10 @@ function ImageList() {
 
               return (
                 <>
-                  <button type='button' className='favourite-btn btn btn-outline-info' onClick={() => addfevList(item.id, item.urls.regular)}>fev</button>
+                  {/* <button type='button' className='favourite-btn btn btn-outline-info' onClick={() => addfevList(item.id, item.urls.regular)}>fev</button> */}
 
 
-                  <img className='image' key={item.id} src={item.urls.regular}/>
+                  <img className='image' onClick={() => addfevList(item.id, item.urls.regular)} key={item.id} src={item.urls.regular}/>
 
 
                 </>
